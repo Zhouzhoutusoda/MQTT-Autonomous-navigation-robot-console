@@ -1,13 +1,31 @@
 {
-    "name": "mqtt-bridge",
-    "version": "1.0.0",
-    "description": "MQTT桥接器 - 将内网MQTT消息转发到公网MQTT服务器",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "dependencies": {
-        "mqtt": "^4.3.7",
-        "dotenv": "^16.0.3"
-    }
+  "name": "mqtt-autonomous-navigation-robot-console",
+  "version": "1.0.0",
+  "description": "MQTT自主导航机器人控制台 - 包含前端仪表板、后端MQTT桥接器和数据模拟器",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" \"npm run simulator\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "simulator": "cd simulator && node mqtt-simulator.js",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "npm run backend"
+  },
+  "keywords": [
+    "mqtt",
+    "robot",
+    "navigation",
+    "dashboard",
+    "vue",
+    "autonomous"
+  ],
+  "author": "Robot Navigation Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }

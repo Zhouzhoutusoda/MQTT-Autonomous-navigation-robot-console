@@ -1,0 +1,13 @@
+{
+  "name": "mqtt-robot-simulator",
+  "version": "1.0.0",
+  "description": "MQTT机器人数据模拟器",
+  "main": "enhanced-mqtt-simulator.js",
+  "scripts": {
+    "start": "node enhanced-mqtt-simulator.js",
+    "simple": "node mqtt-simulator.js"
+  },
+  "dependencies": {
+    "mqtt": "^5.13.0"
+  }
+}
